@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: 0.0.0
+description: >-
+  linux-audit-exporter collects Linux audit metrics and exports in Prometheus
+  format.
+home: 'https://github.com/TeachersPayTeachers/linux-audit-exporter'
+keywords:
+  - linux
+  - audit
+  - prometheus
+  - odev2
+  - processor
+name: linux-audit-exporter
+sources:
+  - 'https://github.com/TeachersPayTeachers/linux-audit-exporter'
+version: 0.0.0

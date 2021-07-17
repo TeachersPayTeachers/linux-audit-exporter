@@ -1,0 +1,42 @@
+{
+  "name": "@teachers/linux-audit-exporter",
+  "version": "0.0.0",
+  "description": "Export Linux Audit metrics in Prometheus format",
+  "repository": "git@github.com:teacherspayteachers/linux-audit-exporter.git",
+  "license": "MIT",
+  "author": "Max Englander <max.englander@teacherspayteachers.com>",
+  "maintainers": [
+    {
+      "name": "Jeff Martin",
+      "email": "jeff@teacherspayteachers.com"
+    },
+    {
+      "name": "Max Englander",
+      "email": "max.englander@teacherspayteachers.com"
+    }
+  ],
+  "keywords": [
+    "linux",
+    "audit",
+    "metrics",
+    "prometheus",
+    "kubernetes",
+    "helm"
+  ],
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@brpaz/semantic-release-helm": "^1.1.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@semantic-release/npm": "^7.0.10",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "semantic-release": "^17.3.7",
+    "semantic-release-helm": "^1.4.3"
+  },
+  "dependencies": {},
+  "peerDependencies": {}
+}

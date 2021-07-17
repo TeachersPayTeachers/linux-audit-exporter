@@ -1,0 +1,4 @@
+node_modules/
+.tool-versions
+linux-audit-exporter
+!linux-audit-exporter/

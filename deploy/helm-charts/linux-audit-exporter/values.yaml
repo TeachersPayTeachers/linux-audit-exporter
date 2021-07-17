@@ -1,0 +1,73 @@
+# Specify Pod affinity constraints.
+affinity: {}
+image:
+  # Docker image pull policy.
+  pullPolicy: IfNotPresent
+  # Docker image registry.
+  registry: docker.io
+  # Docker image repository.
+  repository: teacherspayteachers/linux-audit-exporter
+  # Docker image tag.
+  tag: latest
+# Image pull secrets.
+imagePullSecrets: []
+# Full name override.
+fullnameOverride: ~
+livenessProbe:
+  httpGet:
+    # Liveness probe HTTP path.
+    path: /healthz
+    # Liveness probe HTTP port.
+    port: http
+  # Liveness probe initial delay seconds.
+  initialDelaySeconds: 10
+  # Liveness probe period seconds.
+  periodSeconds: 10
+  # Liveness probe timeout seconds.
+  timeoutSeconds: 5
+  # Liveness probe failure threshold.
+  failureThreshold: 2
+  # Liveness probe success threshold.
+  successThreshold: 1
+readinessProbe:
+  httpGet:
+    # Readiness probe HTTP path.
+    path: /healthz
+    # Readiness probe HTTP port.
+    port: http
+  # Readiness probe initial delay seconds.
+  initialDelaySeconds: 5
+  # Readiness probe period seconds.
+  periodSeconds: 10
+  # Readiness probe timeout seconds.
+  timeoutSeconds: 5
+  # Readiness probe failure threshold.
+  failureThreshold: 6
+  # Readiness probe success threshold.
+  successThreshold: 1
+# Name override.
+nameOverride: ~
+# Node selector.
+nodeSelector: {}
+# Priority class name.
+priorityClassName: ""
+# Pod annotations.
+podAnnotations: {}
+# Pod labels.
+podLabels: {}
+# Container resources.
+resources: {}
+securityContext:
+  capabilities:
+    # Add security context capabilities.
+    # AUDIT_READ (preferred) or AUDIT_CONTROL is required.
+    add: ["AUDIT_READ"]
+    # Drop security context capabilities.
+    drop: ["all"]
+  # Set to true to increase attack cost.
+  readOnlyFileSystem: true
+  # To read from a netlink multicast group, processes require
+  # an effective UID of 0 or CAP_NET_ADMIN.
+  runAsUser: 0
+# Specify taint tolerations.
+tolerations: []

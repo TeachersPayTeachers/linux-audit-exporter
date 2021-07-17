@@ -1,0 +1,9 @@
+FROM golang:1.14.12-alpine
+
+RUN mkdir -p /app
+WORKDIR /app
+
+RUN set -x; apk --no-cache add bash git make nodejs npm openssl \
+    && wget -O- -nv https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+COPY . .

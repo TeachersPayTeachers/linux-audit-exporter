@@ -1,0 +1,19 @@
+project:
+  name: linux-audit-exporter
+  shortName: linux-audit-exporter
+  url: https://github.com/teacherspayteachers/linux-audit-exporter
+  description: Export your Linux Audit status as Prometheus metrics
+  app: a Prometheus exporter for Linux Audit status
+repository:
+  url: https://teacherspayteachers.github.io/helm-charts
+  name: tpt
+chart:
+  name: linux-audit-exporter
+  version:
+  values: "-- generate from values file --"
+  valuesExample: "-- generate from values file --"
+prerequisites:
+- K8S host running Linux kernel with audit subsystem
+release:
+  name: linux-audit-exporter
+  namespace: kube-system
