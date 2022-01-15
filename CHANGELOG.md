@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.1.1...v0.2.0) (2022-01-15)
+
+
+### Features
+
+* add backlog_wait_time_actual metric ([#35](https://github.com/teacherspayteachers/linux-audit-exporter/issues/35)) ([db8784a](https://github.com/teacherspayteachers/linux-audit-exporter/commit/db8784a45160e182603b8f98c88b76ec3694afab))
+
 ## [0.1.1](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.1.0...v0.1.1) (2022-01-15)
 
 
