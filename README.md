@@ -145,14 +145,17 @@ linux_audit_backlog_limit 5000
 # HELP linux_audit_backlog_wait_time Time kernel waits when backlog limit is reached.
 # TYPE linux_audit_backlog_wait_time gauge
 linux_audit_backlog_wait_time 15000
+# HELP linux_audit_backlog_wait_time_actual Total time spent by kernel waiting to queue audit events on backlog.
+# TYPE linux_audit_backlog_wait_time_actual gauge
+linux_audit_backlog_wait_time_actual 10
 # HELP linux_audit_enabled Enabled flag. 0 = disabled. 1 = enabled. 2 = immutable. -1 = unknown.
 # TYPE linux_audit_enabled gauge
 linux_audit_enabled 1
 # HELP linux_audit_failure Number of critical errors, such as transmission errors, backlog limit exceeded, etc.
-# TYPE linux_audit_failure counter
+# TYPE linux_audit_failure gauge
 linux_audit_failure 0
 # HELP linux_audit_lost Number of event records that have been discarded due to kernel audit queue overflowing.
-# TYPE linux_audit_lost counter
+# TYPE linux_audit_lost gauge
 linux_audit_lost 0
 # HELP linux_audit_rate_limit Limit of messages per second. A value of zero means no rate limit is applied.
 # TYPE linux_audit_rate_limit gauge

@@ -5,7 +5,7 @@ package audit
 import (
 	"fmt"
 
-	libaudit "github.com/elastic/go-libaudit"
+	libaudit "github.com/elastic/go-libaudit/v2"
 )
 
 type linuxClient struct {
