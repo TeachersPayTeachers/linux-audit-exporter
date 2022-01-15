@@ -1,6 +1,6 @@
 module github.com/TeachersPayTeachers/linux-audit-exporter
 
-go 1.14
+go 1.15
 
 require (
 	github.com/elastic/go-libaudit v0.4.0
