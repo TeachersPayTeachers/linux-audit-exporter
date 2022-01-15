@@ -14,14 +14,15 @@ const prometheusNamespace = "linux_audit"
 
 // Exporter implements prometheus.Collector.
 type Exporter struct {
-	auditClient         audit.Client
-	backlogDesc         *prometheus.Desc
-	backlogLimitDesc    *prometheus.Desc
-	backlogWaitTimeDesc *prometheus.Desc
-	enabledDesc         *prometheus.Desc
-	failureDesc         *prometheus.Desc
-	lostDesc            *prometheus.Desc
-	rateLimitDesc       *prometheus.Desc
+	auditClient               audit.Client
+	backlogDesc               *prometheus.Desc
+	backlogLimitDesc          *prometheus.Desc
+	backlogWaitTimeDesc       *prometheus.Desc
+	backlogWaitTimeActualDesc *prometheus.Desc
+	enabledDesc               *prometheus.Desc
+	failureDesc               *prometheus.Desc
+	lostDesc                  *prometheus.Desc
+	rateLimitDesc             *prometheus.Desc
 }
 
 func New(auditClient audit.Client) *Exporter {
@@ -42,6 +43,12 @@ func New(auditClient audit.Client) *Exporter {
 		backlogWaitTimeDesc: prometheus.NewDesc(
 			prometheus.BuildFQName(prometheusNamespace, "", "backlog_wait_time"),
 			"Time kernel waits when backlog limit is reached.",
+			[]string{},
+			nil,
+		),
+		backlogWaitTimeActualDesc: prometheus.NewDesc(
+			prometheus.BuildFQName(prometheusNamespace, "", "backlog_wait_time_actual"),
+			"Total time spent by kernel waiting to queue audit events on backlog.",
 			[]string{},
 			nil,
 		),
@@ -79,6 +86,7 @@ func (e *Exporter) Describe(ch chan<- *prometheus.Desc) {
 	ch <- e.backlogDesc
 	ch <- e.backlogLimitDesc
 	ch <- e.backlogWaitTimeDesc
+	ch <- e.backlogWaitTimeActualDesc
 	ch <- e.enabledDesc
 	ch <- e.failureDesc
 	ch <- e.lostDesc
@@ -94,9 +102,10 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		ch <- prometheus.MustNewConstMetric(e.backlogDesc, prometheus.GaugeValue, float64(s.Backlog))
 		ch <- prometheus.MustNewConstMetric(e.backlogLimitDesc, prometheus.GaugeValue, float64(s.BacklogLimit))
 		ch <- prometheus.MustNewConstMetric(e.backlogWaitTimeDesc, prometheus.GaugeValue, float64(s.BacklogWaitTime))
+		ch <- prometheus.MustNewConstMetric(e.backlogWaitTimeActualDesc, prometheus.GaugeValue, float64(s.BacklogWaitTimeActual))
 		ch <- prometheus.MustNewConstMetric(e.enabledDesc, prometheus.GaugeValue, float64(s.Enabled))
-		ch <- prometheus.MustNewConstMetric(e.failureDesc, prometheus.CounterValue, float64(s.Failure))
-		ch <- prometheus.MustNewConstMetric(e.lostDesc, prometheus.CounterValue, float64(s.Lost))
+		ch <- prometheus.MustNewConstMetric(e.failureDesc, prometheus.GaugeValue, float64(s.Failure))
+		ch <- prometheus.MustNewConstMetric(e.lostDesc, prometheus.GaugeValue, float64(s.Lost))
 		ch <- prometheus.MustNewConstMetric(e.rateLimitDesc, prometheus.GaugeValue, float64(s.RateLimit))
 	} else {
 		log.Printf("Error getting audit status: %s", err)
