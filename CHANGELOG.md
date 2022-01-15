@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.2.0...v0.2.1) (2022-01-15)
+
+
+### Bug Fixes
+
+* use alpine 3.13 to avoid faccessat2 issue ([#38](https://github.com/teacherspayteachers/linux-audit-exporter/issues/38)) ([9e08c19](https://github.com/teacherspayteachers/linux-audit-exporter/commit/9e08c1949eb2f09305e913ae4391721abb7186f4))
+
 # [0.2.0](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.1.1...v0.2.0) (2022-01-15)
 
 
