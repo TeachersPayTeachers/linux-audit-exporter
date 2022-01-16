@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.2.1...v0.2.2) (2022-01-16)
+
+
+### Bug Fixes
+
+* pin alpine image version, get ci node deps via multi-stage build ([#39](https://github.com/teacherspayteachers/linux-audit-exporter/issues/39)) ([dd8bac9](https://github.com/teacherspayteachers/linux-audit-exporter/commit/dd8bac9d7399dfd99017c9223c7017bab3abf54d))
+
 ## [0.2.1](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.2.0...v0.2.1) (2022-01-15)
 
 

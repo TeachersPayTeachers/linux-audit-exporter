@@ -1,6 +1,6 @@
 {
   "name": "@teachers/linux-audit-exporter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Export Linux Audit metrics in Prometheus format",
   "repository": "git@github.com:teacherspayteachers/linux-audit-exporter.git",
   "license": "MIT",
