@@ -1,4 +1,4 @@
-FROM golang:1.15.15-alpine3.13 as builder
+FROM golang:1.14.15-alpine3.11 as builder
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . .
 
 RUN set -x; go build -o linux-audit-exporter
 
-FROM alpine
+FROM alpine:3.11
 
 COPY --from=builder /app/linux-audit-exporter /usr/local/bin/
 
