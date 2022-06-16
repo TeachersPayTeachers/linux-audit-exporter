@@ -41,7 +41,7 @@ Thank you for contributing! :smile:
  8. Wait for CI (GitHub actions) to pass
 
 Once the pull request has been reviewed by a Teachers Pay Teachers employee,
-and has passed CI, a Teachers Pay Teachers will merge the pull request to the
+and has passed CI, a Teachers Pay Teachers employee will merge the pull request to the
 main branch. At that point, an internal process will automatically create a new
 GitHub release, Docker image, and Helm chart if there are any new `fix:` or
 `feat:` commits.
