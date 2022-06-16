@@ -175,7 +175,27 @@ There is an (experimental, at time of this writing) user-space [StatsD plugin](h
 
 ## Contributing
 
-Contributions are very welcome! Please see [CONTRIBUTING.md](https://github.com/TeachersPayTeachers/linux-audit-exporter/blob/main/CONTRIBUTING.md).
+Contributions are very welcome!
+
+Please see [CONTRIBUTING.md](https://github.com/TeachersPayTeachers/linux-audit-exporter/blob/main/CONTRIBUTING.md)
+for information on how to contribute changes to this project.
+
+## Release
+
+When new commits are merged to the main branch, an internal process will
+automatically create a new GitHub release, Docker image, and Helm chart if
+there are any new `fix:` or `feat:` commits.
+
+Note to Teachers Pay Teachers employees: see this
+[internal wiki](https://teacherspayteachers.atlassian.net/wiki/spaces/CLOUDOPS/pages/3095789609/Linux+Audit+Exporter)
+for information about this process.
+
+## Continuous Integration
+
+New commits or pull requests to this project are automatically built, linted
+and tested by GitHub Actions. See the
+[`./github/workflows/ci.yaml`](./github/workflows/ci.yaml) file for the
+configuration of CI actions.
 
 ## License
 
