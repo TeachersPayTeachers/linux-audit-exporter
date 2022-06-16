@@ -28,7 +28,7 @@ Thank you for contributing! :smile:
     make test
     ```
 
- 5. Commit your changes
+ 5. Commit your changes following [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/)
 
  6. Optionally, run CI tasks locally
 
@@ -37,3 +37,11 @@ Thank you for contributing! :smile:
     ```
 
  7. Push, and submit pull request
+
+ 8. Wait for CI (GitHub actions) to pass
+
+Once the pull request has been reviewed by a Teachers Pay Teachers employee,
+and has passed CI, a Teachers Pay Teachers will merge the pull request to the
+main branch. At that point, an internal process will automatically create a new
+GitHub release, Docker image, and Helm chart if there are any new `fix:` or
+`feat:` commits.
