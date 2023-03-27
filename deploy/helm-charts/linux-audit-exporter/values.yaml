@@ -65,7 +65,7 @@ securityContext:
     # Drop security context capabilities.
     drop: ["all"]
   # Set to true to increase attack cost.
-  readOnlyFileSystem: true
+  readOnlyRootFilesystem: true
   # To read from a netlink multicast group, processes require
   # an effective UID of 0 or CAP_NET_ADMIN.
   runAsUser: 0
