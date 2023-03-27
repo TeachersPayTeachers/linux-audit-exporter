@@ -13,4 +13,4 @@ keywords:
 name: linux-audit-exporter
 sources:
   - 'https://github.com/TeachersPayTeachers/linux-audit-exporter'
-version: 0.2.3
+version: 0.2.4

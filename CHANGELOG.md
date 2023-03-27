@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.2.2...v0.2.3) (2023-03-27)
+
+
+### Bug Fixes
+
+* make friendly with Helm3 and k8s 1.22 ([#43](https://github.com/teacherspayteachers/linux-audit-exporter/issues/43)) ([8e84539](https://github.com/teacherspayteachers/linux-audit-exporter/commit/8e845396500d763ea37eacdfa572576589753da4))
+
 ## [0.2.2](https://github.com/teacherspayteachers/linux-audit-exporter/compare/v0.2.1...v0.2.2) (2022-01-16)
 
 
